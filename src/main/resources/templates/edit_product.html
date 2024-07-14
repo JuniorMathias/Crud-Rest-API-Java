@@ -9,7 +9,7 @@
 
 <body>
     <h1>Edit Product</h1>
-    <form th:action="@{/products/{id}/update(id=${product.id})}" th:object="${product}" method="post">
+    <form th:action="@{/{id}/update(id=${product.id})}" th:object="${product}" method="post">
         <label> Name
             <input type="text" th:field="*{name}" />
         </label>

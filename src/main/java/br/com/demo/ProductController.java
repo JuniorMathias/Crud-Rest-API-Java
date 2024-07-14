@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-@RequestMapping("/products")
+@RequestMapping("/")
 public class ProductController {
 
     @Autowired
@@ -34,7 +34,7 @@ public class ProductController {
     @PostMapping
     public String saveProduct(@ModelAttribute("product") Product product) {
         productRepository.save(product);
-        return "redirect:/products";
+        return "redirect:/";
     }
     
     @GetMapping("/{id}/edit")
@@ -49,12 +49,12 @@ public class ProductController {
     public String updateProduct(@PathVariable("id") Long productId, @ModelAttribute("product") Product product) {
         product.setId(productId);
         productRepository.save(product);
-        return "redirect:/products";
+        return "redirect:/";
     }
     
     @GetMapping("/{id}/delete")
     public String deleteProduct(@PathVariable("id") Long productId) {
         productRepository.deleteById(productId);
-        return "redirect:/products";
+        return "redirect:/";
     }
 }
