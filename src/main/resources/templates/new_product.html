@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Product</title>
+</head>
+
+<body>
+    <h1>New Product</h1>
+    <form th:action="@{/products}" th:object="${product}" method="post">
+        <label> Name
+            <input type="text" th:filed="*{name}" />
+        </label>
+        <br>
+        <label> Price
+            <input type="number" th:filed="*{price}" />
+        </label>
+        <br>
+        <label> Description
+            <input type="textarea" th:filed="*{description}" />
+        </label>
+        <br>
+        <button type="submit">Save</button>
+    </form>
+</body>
+
+</html>
